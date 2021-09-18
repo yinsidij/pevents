@@ -73,14 +73,14 @@ int main(void)
     printf("Thread %d sets event...\n", GetCurrentThreadId());
     BOOL ret = SetEvent(ghWriteEvent);
 
-    printf("ret = %d\n", ret);
+    printf("ret = %d, error = %d\n", ret, GetLastError());
 
     Sleep(1000);
 
     printf("Thread %d sets event...\n", GetCurrentThreadId());
     ret = SetEvent(ghWriteEvent);
 
-    printf("ret = %d\n", ret);
+    printf("ret = %d, error = %d\n", ret, GetLastError());
 
     while (true) {};
     
